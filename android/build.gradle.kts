@@ -1,7 +1,22 @@
+buildscript {
+    repositories {
+        maven { url = uri("https://mvn.mob.com/android") }
+        maven { url = uri("https://mvn.zztfly.com/android") }
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.mob.sdk:MobSDK2:+")
+        classpath("cn.fly.sdk:FlySDK:+")
+    }
+}
+
 allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://mvn.mob.com/android") }
+        maven { url = uri("https://mvn.zztfly.com/android") }
         maven { url = uri("https://storage.flutter-io.cn/download.flutter.io") }
     }
 }

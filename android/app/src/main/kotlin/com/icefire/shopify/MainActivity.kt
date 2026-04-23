@@ -1,4 +1,4 @@
-package com.icefire.shopify.cxq_merchant_flutter
+package com.icefire.shopify
 
 import io.flutter.embedding.android.FlutterActivity
 

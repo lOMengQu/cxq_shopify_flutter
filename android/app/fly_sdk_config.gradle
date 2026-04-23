@@ -1,0 +1,8 @@
+// FlyVerify SDK 配置（MobTech 一键登录）
+apply plugin: 'cn.fly.sdk'
+
+FlySDK {
+    appKey "38031db831894"
+    appSecret "067fd62b03ef78c5f27cc34bb9cad3d9"
+    FlyVerify {}
+}

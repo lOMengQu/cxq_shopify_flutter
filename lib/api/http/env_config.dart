@@ -10,8 +10,8 @@ class EnvConfig {
 
   // ---------- HTTP ----------
   static const _httpUrlMap = {
-    Env.test: 'http://www.apptest.chaoxingqiu.cn/chaoxingqiu',
-    Env.official: 'https://www.app.chaoxingqiu.cn/chaoxingqiu',
+    Env.test: 'http://businesstestapi.chaoxingqiu.cn',
+    Env.official: 'https://businessapi.chaoxingqiu.cn',
   };
 
   static String get httpBaseUrl => _httpUrlMap[currentEnv]!;

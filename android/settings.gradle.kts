@@ -14,6 +14,8 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven { url = uri("https://mvn.mob.com/android") }
+        maven { url = uri("https://mvn.zztfly.com/android") }
         maven { url = uri("https://storage.flutter-io.cn/download.flutter.io") }
     }
 }
