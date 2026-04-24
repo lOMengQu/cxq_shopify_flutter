@@ -23,7 +23,7 @@ class UploadAvatarNicknameLogic extends GetxController {
   final isUploading = false.obs;
   final isSubmitting = false.obs;
 
-  bool get isFormValid => nickname.value.trim().isNotEmpty;
+  bool get isFormValid => nickname.value.trim().isNotEmpty && avatar.value.isNotEmpty;
 
   @override
   void onReady() {
@@ -131,6 +131,11 @@ class UploadAvatarNicknameLogic extends GetxController {
       return;
     }
 
+    if (avatar.value.isEmpty) {
+      FToastUtil.show("请上传头像");
+      return;
+    }
+
     if (isSubmitting.value) return;
     isSubmitting.value = true;
 
@@ -139,7 +144,7 @@ class UploadAvatarNicknameLogic extends GetxController {
     final response = await AsyncHandler.handle(
       future: postAccountUser(
         nickname.value,
-        avatar.value.isNotEmpty ? avatar.value : '',
+        avatar.value,
       ),
       onFinally: () {
         LoadingUtil.dismiss();
@@ -149,6 +154,7 @@ class UploadAvatarNicknameLogic extends GetxController {
 
     if (response.ok) {
       UserService.saveAvatar(avatar.value);
+      UserService.saveNickname(nickname.value);
       await UserService.clearRegistrationInProgress();
       Get.offAllNamed(Routes.mainHome);
     } else {

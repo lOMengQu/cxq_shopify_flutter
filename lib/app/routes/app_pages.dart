@@ -1,4 +1,7 @@
+import 'package:cxq_merchant_flutter/app/modules/init/init_binding.dart';
+import 'package:cxq_merchant_flutter/app/modules/init/init_view.dart';
 import 'package:cxq_merchant_flutter/app/modules/forgot_password/forgot_password_binding.dart';
+import 'package:cxq_merchant_flutter/common/widget/user_agreement/user_agreement_widget.dart';
 import 'package:cxq_merchant_flutter/app/modules/invite_code/invite_code_binding.dart';
 import 'package:cxq_merchant_flutter/app/modules/invite_code/invite_code_view.dart';
 import 'package:cxq_merchant_flutter/app/modules/upload_avatar_nickname/upload_avatar_nickname_binding.dart';
@@ -16,9 +19,14 @@ part 'app_routes.dart';
 
 // 路由配置
 class AppPages {
-  static const initial = Routes.login;
+  static const initial = Routes.init;
 
   static final routes = [
+    GetPage(
+      name: Routes.init,
+      page: () => const InitPage(),
+      binding: InitBinding(),
+    ),
     GetPage(
       name: Routes.login,
       page: () => const LoginPage(),
@@ -48,6 +56,10 @@ class AppPages {
       name: Routes.mainHome,
       page: () => const MainHomePage(),
       binding: MainHomeBinding(),
+    ),
+    GetPage(
+      name: Routes.userServiceAgreement,
+      page: () => const UserServiceAgreementPage(),
     ),
   ];
 }
