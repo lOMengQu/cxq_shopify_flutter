@@ -3,6 +3,7 @@ import '../z_entity/user/login_entity.dart';
 import '../z_entity/user/image_code_entity.dart';
 import '../http/api_client.dart';
 import '../http/api_endpoints.dart';
+import '../z_entity/user/user_homepage_entity.dart';
 
 /// 一键登录（运营商免密认证）
 /// [token] 运营商返回的 token
@@ -149,3 +150,63 @@ Future<BaseResponse<void>> postGetVerifyCode({
     fromJsonT: (json) => null,
   );
 }
+
+/// 获取用户个人主页信息
+Future<BaseResponse<UserHomepageInfoEntity>> postHomepageInfo({
+  required String userId,
+}) {
+  return ApiClient().post(
+    ApiEndpoints.homepageInfo,
+    data: {'userId': userId},
+    fromJsonT: (json) => UserHomepageInfoEntity.fromJson(json),
+  );
+}
+
+/// 获取用户圈子列表
+Future<BaseResponse<UserGambitListEntity>> postHomepageGambitList({
+  required String userId,
+  required int page,
+}) {
+  return ApiClient().post(
+    ApiEndpoints.homepageGambitList,
+    data: {
+      'userId': userId,
+      'page': page,
+    },
+    fromJsonT: (json) => UserGambitListEntity.fromJson(json),
+  );
+}
+
+/// 设置用户状态
+Future<BaseResponse<void>> postUserStatus({
+  required String description,
+}) {
+  return ApiClient().post(
+    ApiEndpoints.homepageUserStatus,
+    data: {
+      "description": description,
+    },
+    fromJsonT: (json) {},
+  );
+}
+
+/// 编辑用户信息
+Future<BaseResponse<void>> postUserEdit({
+  String? userName,
+  String? avatar,
+  String? address,
+  List<String>? photoWall,
+}) {
+  return ApiClient().post(
+    ApiEndpoints.homepageUserEdit,
+    data: {
+      "userName": userName,
+      "avatar": avatar,
+      "address": address,
+      "photoWall": photoWall,
+    }..removeWhere((key, value) => value == null),
+    fromJsonT: (json) {},
+  );
+}
+
+

@@ -10,6 +10,10 @@ class ApiEndpoints {
   /// 用户协议
   static String userAgreementUrl = '$baseUrl/share/page6/';
 
+  /// 服务协议
+  static  String serviceAgreementUrl =
+      '$baseUrl/share/page1/';
+
   // ========== 登录注册相关 ==========
   /// 验证码登录/注册
   static const String loginOrRegisterByCaptcha =
@@ -46,4 +50,16 @@ class ApiEndpoints {
   /// 文件上传凭证
   static const String fileUploadAuth =
       '/chaoxingqiu/file/uploads/auth/info/';
+
+  /// 用户个人主页
+  static const String homepageInfo = '/homepage/info/';
+
+  /// 用户个人主页话题列表
+  static const String homepageGambitList = '/homepage/gambit/list/';
+
+  /// 设置用户状态
+  static const String homepageUserStatus = '/homepage/user/status/';
+
+  /// 编辑用户信息
+  static const String homepageUserEdit = '/homepage/user/edit/';
 }

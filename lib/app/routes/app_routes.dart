@@ -8,5 +8,6 @@ abstract class Routes {
   static const String forgotPassword = "/forgot_password";
   static const String inviteCode = "/invite_code";
   static const String uploadAvatarNickname = "/upload_avatar_nickname";
+  static const String editProfile = "/edit_profile";
   // TODO: 在此添加更多路由路径
 }
