@@ -5,10 +5,10 @@ class ApiEndpoints {
   static String get baseUrl => EnvConfig.httpBaseUrl;
 
   /// 隐私政策
-  static String privacyPolicyUrl = '$baseUrl/share/page5/';
+  static String get privacyPolicyUrl => '${EnvConfig.userHttpBaseUrl}/share/page5/';
 
   /// 用户协议
-  static String userAgreementUrl = '$baseUrl/share/page6/';
+  static String get userAgreementUrl => '${EnvConfig.userHttpBaseUrl}/share/page6/';
 
   /// 服务协议
   static  String serviceAgreementUrl =
@@ -31,9 +31,9 @@ class ApiEndpoints {
   static const String getVerifyCode =
       '/chaoxingqiu/account/get_verify_code_in_user_v_5_0_1/';
 
-  /// 一键登录（运营商免密认证）
+  /// 一键登录（运营商秒验免密认证）
   static const String oneClickLogin =
-      '/chaoxingqiu/account/login_or_register_by_captcha_v_5_1_0/';
+      '/chaoxingqiu/account/second_check_register_or_login_v_5_1_0/';
 
   /// 重置密码
   static const String resetPassword =

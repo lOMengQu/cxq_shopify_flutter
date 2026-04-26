@@ -19,10 +19,8 @@ import '../../../api/http/api_endpoints.dart';
 import '../../../api/http/env_config.dart';
 
 class LoginLogic extends GetxController {
-  static const String _userAgreementUrl =
-      'http://apitest.wxpmusic.cn/danceline/agreement/user_service_agreement/';
-  static const String _privacyUrl =
-      'http://apitest.wxpmusic.cn/danceline/agreement/privacy/';
+  static String get _userAgreementUrl => ApiEndpoints.userAgreementUrl;
+  static String get _privacyUrl => ApiEndpoints.privacyPolicyUrl;
   static const String _themeColor = '#793DF9';
 
   final isLoading = false.obs;
@@ -132,13 +130,25 @@ class LoginLogic extends GetxController {
                     TextSpan(
                       text: '《用户协议》',
                       style: TextStyle(color: primary),
-                      recognizer: TapGestureRecognizer()..onTap = () {},
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Get.toNamed(Routes.userServiceAgreement,
+                              arguments: {
+                                "agreement": ApiEndpoints.userAgreementUrl
+                              });
+                        },
                     ),
                     const TextSpan(text: '、'),
                     TextSpan(
                       text: '《隐私协议》',
                       style: TextStyle(color: primary),
-                      recognizer: TapGestureRecognizer()..onTap = () {},
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Get.toNamed(Routes.userServiceAgreement,
+                              arguments: {
+                                "agreement": ApiEndpoints.privacyPolicyUrl
+                              });
+                        },
                     ),
                   ],
                 ),

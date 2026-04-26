@@ -1,3 +1,5 @@
+import 'package:cxq_merchant_flutter/api/http/api_endpoints.dart';
+import 'package:cxq_merchant_flutter/app/routes/app_pages.dart';
 import 'package:cxq_merchant_flutter/common/utils/platform_util.dart';
 import 'package:cxq_merchant_flutter/common/constants/app_constants.dart';
 import 'package:cxq_merchant_flutter/common/widget/button_widget.dart';
@@ -117,7 +119,14 @@ class _LoginPageState extends State<LoginPage> {
                                 color: primary,
                                 fontSize: 12.sp,
                               ),
-                              recognizer: TapGestureRecognizer()..onTap = () {},
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  Get.toNamed(Routes.userServiceAgreement,
+                                      arguments: {
+                                        "agreement":
+                                            ApiEndpoints.userAgreementUrl
+                                      });
+                                },
                             ),
                             const TextSpan(text: '、'),
                             TextSpan(
@@ -126,7 +135,14 @@ class _LoginPageState extends State<LoginPage> {
                                 color: primary,
                                 fontSize: 12.sp,
                               ),
-                              recognizer: TapGestureRecognizer()..onTap = () {},
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  Get.toNamed(Routes.userServiceAgreement,
+                                      arguments: {
+                                        "agreement":
+                                            ApiEndpoints.privacyPolicyUrl
+                                      });
+                                },
                             ),
                           ],
                         ),

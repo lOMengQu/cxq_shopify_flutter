@@ -16,6 +16,14 @@ class EnvConfig {
 
   static String get httpBaseUrl => _httpUrlMap[currentEnv]!;
 
+  // ---------- 用户端 HTTP（公共服务，如文件上传） ----------
+  static const _userHttpUrlMap = {
+    Env.test: 'http://www.apptest.chaoxingqiu.cn/chaoxingqiu',
+    Env.official: 'https://www.app.chaoxingqiu.cn/chaoxingqiu',
+  };
+
+  static String get userHttpBaseUrl => _userHttpUrlMap[currentEnv]!;
+
   // ---------- WebSocket ----------
   static const _wsUrlMap = {
     Env.test: 'wss://apptest.chaoxingqiu.cn',

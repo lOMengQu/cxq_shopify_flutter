@@ -95,7 +95,7 @@ Future<BaseResponse<void>> postResetPassword({
   return ApiClient().post(
     ApiEndpoints.resetPassword,
     data: {
-      "phone": phone,
+      "phoneNumber": phone,
       "captcha": captcha,
       "password": password,
     },
