@@ -1,4 +1,10 @@
 import 'package:cxq_merchant_flutter/app/modules/init/init_binding.dart';
+import 'package:cxq_merchant_flutter/app/modules/upload_product/upload_product_binding.dart';
+import 'package:cxq_merchant_flutter/app/modules/upload_product/upload_product_view.dart';
+import 'package:cxq_merchant_flutter/app/modules/product_params/product_params_binding.dart';
+import 'package:cxq_merchant_flutter/app/modules/product_params/product_params_view.dart';
+import 'package:cxq_merchant_flutter/app/modules/product_attributes/product_attributes_binding.dart';
+import 'package:cxq_merchant_flutter/app/modules/product_attributes/product_attributes_view.dart';
 import 'package:cxq_merchant_flutter/app/modules/init/init_view.dart';
 import 'package:cxq_merchant_flutter/app/modules/forgot_password/forgot_password_binding.dart';
 import 'package:cxq_merchant_flutter/common/widget/user_agreement/user_agreement_widget.dart';
@@ -19,7 +25,7 @@ part 'app_routes.dart';
 
 // 路由配置
 class AppPages {
-  static const initial = Routes.init;
+  static const initial = Routes.uploadProduct;
 
   static final routes = [
     GetPage(
@@ -60,6 +66,21 @@ class AppPages {
     GetPage(
       name: Routes.userServiceAgreement,
       page: () => const UserServiceAgreementPage(),
+    ),
+    GetPage(
+      name: Routes.uploadProduct,
+      page: () => const UploadProductPage(),
+      binding: UploadProductBinding(),
+    ),
+    GetPage(
+      name: Routes.productParams,
+      page: () => const ProductParamsPage(),
+      binding: ProductParamsBinding(),
+    ),
+    GetPage(
+      name: Routes.productAttributes,
+      page: () => const ProductAttributesPage(),
+      binding: ProductAttributesBinding(),
     ),
   ];
 }

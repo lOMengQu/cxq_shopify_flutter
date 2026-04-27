@@ -11,5 +11,8 @@ abstract class Routes {
   static const String uploadAvatarNickname = "/upload_avatar_nickname";
   static const String userServiceAgreement = "/userServiceAgreement";
   static const String editProfile = "/edit_profile";
+  static const String uploadProduct = "/upload_product";
+  static const String productParams = "/product_params";
+  static const String productAttributes = "/product_attributes";
   // TODO: 在此添加更多路由路径
 }

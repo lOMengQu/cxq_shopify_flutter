@@ -62,4 +62,9 @@ class ApiEndpoints {
 
   /// 编辑用户信息
   static const String homepageUserEdit = '/homepage/user/edit/';
+
+  // ========== 商品管理相关 ==========
+  /// 添加/编辑商品
+  static const String spuAddUpdate =
+      '/chaoxingqiu/goods_manage/spu/add/';
 }
